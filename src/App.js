@@ -4,8 +4,9 @@ function App() {
   return (
     <div className="App">
      <h3>Developing user interfaces for web applications.</h3>
-     <FormDisabledDemo />
      {/* <Prentice/> */}
+     <FormDisabledDemo />
+     
     </div>
   );
 }

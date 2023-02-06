@@ -33,7 +33,7 @@ const incrementValue = incrementAmount || [];
   console.log(count,"count")
 
   const onFormLayoutChange = (value) => {
-    dispatch(incrementByAmount(value))
+    dispatch(incrementByAmount([value]))
     // setIncrementAmount(value);
   };
 

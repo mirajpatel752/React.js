@@ -31,7 +31,6 @@ const Showfild = (props) => {
       onSubmit={(event) => {
         event.preventDefault();
         if (!user.name || !user.username) return;
-
         props.editing ? props.updateUser(user.id, user) : props.addUser(user);
         resetAddUser();
       }}
@@ -67,6 +66,7 @@ const Showfild = (props) => {
       <button onClick={() => props.setAddblog(true)}>
         {props.editing ? "Update user" : "save"}
       </button>
+      
       {props.editing && (
         <button onClick={resetAddUser} className="button muted-button">
           Cancel
