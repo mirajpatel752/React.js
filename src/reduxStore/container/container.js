@@ -1,8 +1,7 @@
 import {  createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 0,
-  status: "idle"
+  value: [],
 };
 
 export const counterSlice = createSlice({
@@ -10,14 +9,19 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     incrementByAmount: (state, action) => {
-      state.value = action.payload
+      console.log(initialState,"initialState")
+      state.value.push(action.payload);
     }
   },
- 
+
+  
 });
 
 export const { incrementByAmount } = counterSlice.actions;
 
+console.log(counterSlice.actions,"counterSlice.actions")
+
 export const selectCount = (state) => state.counter.value;
+console.log(selectCount,"selectCount")
 
 export default counterSlice.reducer;
