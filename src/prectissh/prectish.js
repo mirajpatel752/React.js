@@ -24,7 +24,6 @@ const Prentice = () => {
 
   const editRow = (user) => {
     setEditing(true);
-
     setCurrentUser(user);
   };
 
@@ -32,6 +31,7 @@ const Prentice = () => {
     setEditing(false);
     setUsers(users.map((user) => (user.id === id ? updatedUser : user)));
   };
+
 
   return (
     <>

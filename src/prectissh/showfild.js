@@ -6,8 +6,6 @@ const Showfild = (props) => {
     props.editing ? props.currentUser : initialFormState
   );
   const handleInputChange = (event, flog) => {
-    console.log(event, "event");
-    console.log(flog, "flog");
     const { name, value, files } = event.target;
     if (flog) {
       setUser({ ...user, [name]: value });
@@ -15,6 +13,7 @@ const Showfild = (props) => {
       setUser({ ...user, [name]: URL.createObjectURL(files[0]) });
     }
   };
+
 
   useEffect(() => {
     setUser(props.currentUser);
@@ -25,6 +24,7 @@ const Showfild = (props) => {
     setUser(initialFormState);
     props.setCurrentUser(initialFormState);
   };
+
 
   return (
     <form
