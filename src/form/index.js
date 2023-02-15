@@ -1,12 +1,8 @@
 import { PlusOutlined } from "@ant-design/icons";
 import { Button, Form, Input, InputNumber, Select, Upload } from "antd";
 import { useEffect, useState } from "react";
-
-import { useSelector, useDispatch } from "react-redux";
-import {
-  incrementByAmount,
-  selectCount,
-} from "../reduxStore/container/container";
+import { addTag, setActiveTag } from "../store/tags-view.store";
+import { useDispatch, useSelector } from 'react-redux';
 import ShowData from "./show";
 const { TextArea } = Input;
 
@@ -20,19 +16,11 @@ const FormDisabledDemo = () => {
   });
 
   const dispatch = useDispatch();
-
-  const count = useSelector(selectCount);
-
+  const {tags, activeTagId} = useSelector(state => state.tagsView);
+  console.log(tags)
   const onFormLayoutChange = (value) => {
-    data.id = count.length + 1;
-    dispatch(incrementByAmount(data));
-    // setData({
-    //   name: "",
-    //   number: 0,
-    //   select: "",
-    //   messages: "",
-    //   id: null,
-    // });
+    data.id = tags.length + 1;
+    dispatch(addTag(data));
   };
 
   const oncheng = (event, flog) => {
@@ -44,7 +32,6 @@ const FormDisabledDemo = () => {
     }
   };
 
-  console.log(data, "data");
 
   return (
     <>
