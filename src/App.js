@@ -6,12 +6,12 @@ function App() {
     <div className="App">
       <h3>Developing user interfaces for web applications.</h3>
       <Row>
-        {/* <Col span={6}>
+        <Col span={6}>
           <Prentice />
-        </Col> */}
-        {/* <Col offset={8} span={6}> */}
+        </Col>
+        <Col offset={8} span={6}>
           <FormDisabledDemo />
-        {/* </Col> */}
+        </Col>
       </Row>
     </div>
   );
