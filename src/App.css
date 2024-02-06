@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+:where(.css-dev-only-do-not-override-1rqnfsa).ant-picker-outlined{
+  border-color: #4096ff;
+  width: 100%;
+  background-color: #ffffff;
+}
