@@ -11,7 +11,15 @@ import {
 } from "antd";
 import { v4 as uuidv4 } from "uuid";
 
-const PostCreate = ({ data, setData, modal, setModal, editData, edit }) => {
+const PostCreate = ({
+  data,
+  setData,
+  modal,
+  setModal,
+  editData,
+  edit,
+  setProducts,
+}) => {
   const [form] = Form.useForm();
 
   const handleFormSubmit = (values) => {
@@ -21,6 +29,7 @@ const PostCreate = ({ data, setData, modal, setModal, editData, edit }) => {
       updatedData.push(values);
       localStorage.setItem("myData", JSON.stringify(updatedData));
       setData(updatedData);
+      setProducts(updatedData);
       setModal(false);
       message.success("Data saved successfully!");
       form.resetFields();
@@ -30,6 +39,7 @@ const PostCreate = ({ data, setData, modal, setModal, editData, edit }) => {
       updatedData[existingIndex] = values;
       localStorage.setItem("myData", JSON.stringify(updatedData));
       setData(updatedData);
+      setProducts(updatedData);
       setModal(false);
     }
   };
@@ -58,7 +68,13 @@ const PostCreate = ({ data, setData, modal, setModal, editData, edit }) => {
       >
         <Form
           form={form}
-          initialValues={editData}
+          initialValues={{
+            address: editData.address,
+            phone: editData.phone,
+            name: editData.name,
+            email:editData.email,
+            phone:editData.phone
+          }}
           layout="vertical"
           onFinish={handleFormSubmit}
           onFinishFailed={onFinishFailed}
@@ -111,7 +127,7 @@ const PostCreate = ({ data, setData, modal, setModal, editData, edit }) => {
                 name="dob"
                 rules={[
                   {
-                    required: true,
+                    required: false,
                     message: "Please enter your date of birth!",
                   },
                 ]}
