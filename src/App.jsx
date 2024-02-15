@@ -1,11 +1,15 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Dashboard from "./page/dashboard";
 
 function App() {
   return (
     <>
-      <div>
-        <h1>Vite + React</h1>
-      </div>
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Dashboard />} /> 
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
