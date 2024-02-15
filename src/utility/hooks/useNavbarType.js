@@ -1,0 +1,14 @@
+// ** Store Imports
+import { handleNavbarType } from '@store/layout'
+import { useDispatch, useSelector } from 'react-redux'
+
+export const useNavbarType = () => {
+  // ** Hooks
+  const dispatch = useDispatch()
+  const navbarType = useSelector(state => state.layout.navbarType)
+  const setNavbarType = type => {
+    dispatch(handleNavbarType(type))
+  }
+
+  return { navbarType, setNavbarType }
+}
