@@ -40,7 +40,6 @@ const Profile = () => {
   });
   return (
     <>
-      {" "}
       <InputTextField
         value={formik.values.name}
         isRequired={true}
