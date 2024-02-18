@@ -1,16 +1,23 @@
+//
+
+import * as React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Dashboard from "./page/dashboard";
+import Layout from "./page/Layout";
+import Profile from "./page/profile";
 
 function App() {
   return (
-    <>
-      <BrowserRouter basename="/">
-        <Routes>
-          <Route path="/" element={<Dashboard />} /> 
-        </Routes>
+    <div>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
