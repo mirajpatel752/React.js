@@ -18,20 +18,20 @@ export default function swDev() {
 
   function determineAppServerKey(){
     var vapidPublicKey = "BLWOpyATWGI_vyQezobjQ-5PmvbxW-_egHesblUPT5QzAE49AVjtSUP7vhQZd7Q6ZzaL_el4_zSjSY1yRlrunrQ"
+    // https://vapidkeys.com/
     return urlBase64ToUint8Array(vapidPublicKey)
   }
   
 
   let swUrl = `${process.env.PUBLIC_URL}/sw.js`;
   navigator.serviceWorker.register(swUrl).then((response) => {
-    console.log(response, "response");
     return response.pushManager.getSubscription()
-    .then(function(subscription){
-        return response.pushManager.subscribe({
-            userVisibleOnly:true,
-            applicationServerKey:determineAppServerKey()
-        })
-    })
+    // .then(function(subscription){
+    //     return response.pushManager.subscribe({
+    //         userVisibleOnly:true,
+    //         applicationServerKey:determineAppServerKey()
+    //     })
+    // })
   });
 }
 

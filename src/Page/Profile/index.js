@@ -63,3 +63,10 @@ const Profile = () => {
   );
 };
 export default Profile;
+
+
+
+// CLIentID = "608745921575-qnqlgtgsuievb5474mh0pvsq91vk4eij.apps.googleusercontent.com"
+// clientsecreat = "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"
+
+// "608745921575-qnqlgtgsuievb5474mh0pvsq91vk4eij.apps.googleusercontent.com"
