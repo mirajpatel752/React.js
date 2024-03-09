@@ -1,7 +1,7 @@
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
-const Product = () => {
+const GoogleLoginA = () => {
     const [data,setData] = useState()
 
     console.log(data,"data")
@@ -23,4 +23,4 @@ const Product = () => {
     </>
   );
 };
-export default Product;
+export default GoogleLoginA;

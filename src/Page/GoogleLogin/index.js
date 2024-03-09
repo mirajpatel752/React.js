@@ -1,7 +1,7 @@
 import { useGoogleLogin } from "@react-oauth/google"
 import axios from "axios"
 
-const About = () => {
+const GoogleLogin = () => {
 
     const  login  = useGoogleLogin({
         onSuccess: async(response) =>{
@@ -22,11 +22,10 @@ const About = () => {
     
     return (
         <>
-        About
         <button onClick={() => login()}>
             Google  login
         </button>
         </>
     )
 }
-export default About
+export default GoogleLogin
